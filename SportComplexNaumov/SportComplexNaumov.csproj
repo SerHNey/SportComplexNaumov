@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Drawable\user" />
     <Content Include="Entity\Modelbase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Modelbase.Context.cs</LastGenOutput>
