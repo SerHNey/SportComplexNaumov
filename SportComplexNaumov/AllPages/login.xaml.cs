@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SportComplexNaumov
+namespace SportComplexNaumov.AllPages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class login : Page
     {
-        public MainWindow()
+        public login()
         {
             InitializeComponent();
-            MainFrame.Navigate(new AllPages.register());
-            AllClass.Manager.MainFrame = MainFrame;
         }
     }
 }
