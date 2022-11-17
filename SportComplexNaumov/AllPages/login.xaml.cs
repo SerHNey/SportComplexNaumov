@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportComplexNaumov.AllClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,10 @@ namespace SportComplexNaumov.AllPages
         private void btnMinsize_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+        private void gotologin_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new AllPages.register());
         }
     }
 }
