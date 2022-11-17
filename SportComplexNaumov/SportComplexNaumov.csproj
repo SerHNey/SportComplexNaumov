@@ -167,7 +167,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Drawable\user" />
+    <Resource Include="Drawable\key-icon.png" />
+    <Resource Include="Drawable\user.png" />
+    <Resource Include="Drawable\logo.png" />
+    <Resource Include="Drawable\email.png" />
+    <Resource Include="Drawable\phone.png" />
     <Content Include="Entity\Modelbase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Modelbase.Context.cs</LastGenOutput>

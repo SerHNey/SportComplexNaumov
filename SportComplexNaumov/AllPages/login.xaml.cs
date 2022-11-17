@@ -24,5 +24,10 @@ namespace SportComplexNaumov.AllPages
         {
             InitializeComponent();
         }
+
+        private void btnMinsize_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

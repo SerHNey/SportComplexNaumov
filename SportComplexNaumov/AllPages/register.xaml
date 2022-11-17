@@ -6,30 +6,210 @@
       xmlns:local="clr-namespace:SportComplexNaumov.AllPages"
       
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="800"
       Title="register"
       Background="White">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Gray">
-            <Label Content="ФИО"></Label>
-            <TextBox>
-                <TextBox.Background>
-                    <ImageBrush ImageSource=""/>
-                </TextBox.Background>
-            </TextBox>
-        </StackPanel>
-    </Grid>
+    <Border>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#1B1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <StackPanel Width="420"
+                            Orientation="Vertical"
+                            Margin="0,35,0,0">
+                <Image Source="/Drawable/Logo.png"
+                           Width="100" Height="100"/>
+                <TextBlock Text="SporTComplex"
+                               Foreground="White"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               HorizontalAlignment="Center"/>
+                <TextBlock Text="Best"
+                               Foreground="LightGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,5,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Width="200">
+                        <TextBlock Text="Фио"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,20,0,0"/>
+                        <TextBox x:Name="txtfio"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Drawable/user.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="200" Margin="20 0 0 0">
+                        <TextBlock Text="Номер"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,20,0,0"/>
+                        <TextBox x:Name="txtphone"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Drawable/phone.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="Логин"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,20,0,0"/>
+                <TextBox x:Name="txtlogin"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Drawable/user.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="Электронная почта"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,20,0,0"/>
+                <TextBox x:Name="txtemail"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Drawable/email.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBlock Text="Пароль"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                             
+                               Margin="0,15,0,0"/>
+                <PasswordBox x:Name="txtPass"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+                    <PasswordBox.Background>
+                        <ImageBrush ImageSource="/drawable/key-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                    </PasswordBox.Background>
+                </PasswordBox>
+                <Button x:Name="btnLogin"                          
+                            BorderThickness="0"
+                            Content="REGISTER"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,50,0,0"
+                            >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,15,0,0">
+                    <TextBlock Text="Forgot Password?"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"/>
+                    <TextBlock Text="Reset"
+                               Foreground="White"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               Cursor="Hand"
+                               Margin="8,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>
