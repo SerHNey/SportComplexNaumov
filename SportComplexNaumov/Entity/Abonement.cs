@@ -15,9 +15,13 @@ namespace SportComplexNaumov.Entity
     public partial class Abonement
     {
         public int id { get; set; }
-        public Nullable<int> id_cekcia { get; set; }
+        public Nullable<int> id_section { get; set; }
         public Nullable<int> id_client { get; set; }
         public Nullable<int> id_instryrtor { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+    
+        public virtual Client Client { get; set; }
+        public virtual Instryctor Instryctor { get; set; }
+        public virtual Section Section { get; set; }
     }
 }

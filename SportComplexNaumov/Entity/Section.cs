@@ -12,18 +12,21 @@ namespace SportComplexNaumov.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Cekcia
+    public partial class Section
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cekcia()
+        public Section()
         {
-            this.Section = new HashSet<Section>();
+            this.Abonement = new HashSet<Abonement>();
         }
     
-        public int id { get; set; }
-        public string cekcia1 { get; set; }
+        public int id_section { get; set; }
+        public int id_cekcia { get; set; }
+        public int id_trenirovki { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Section> Section { get; set; }
+        public virtual ICollection<Abonement> Abonement { get; set; }
+        public virtual Cekcia Cekcia { get; set; }
+        public virtual Trenirovki Trenirovki { get; set; }
     }
 }

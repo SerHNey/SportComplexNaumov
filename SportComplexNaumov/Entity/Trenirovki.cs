@@ -14,8 +14,16 @@ namespace SportComplexNaumov.Entity
     
     public partial class Trenirovki
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Trenirovki()
+        {
+            this.Section = new HashSet<Section>();
+        }
+    
         public int id { get; set; }
         public string name_trenirovki { get; set; }
-        public Nullable<int> id_cekcia { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Section> Section { get; set; }
     }
 }

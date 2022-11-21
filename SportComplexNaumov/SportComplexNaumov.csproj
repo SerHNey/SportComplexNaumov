@@ -17,6 +17,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,40 +106,43 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Entity\Abonement.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Cekcia.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Client.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Instryctor.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Modelbase.Context.cs">
+    <Compile Include="Entity\ModelComplex.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelbase.Context.tt</DependentUpon>
+      <DependentUpon>ModelComplex.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Modelbase.cs">
+    <Compile Include="Entity\ModelComplex.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Modelbase.Designer.cs">
+    <Compile Include="Entity\ModelComplex.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Modelbase.edmx</DependentUpon>
+      <DependentUpon>ModelComplex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Section.cs">
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\sysdiagrams.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Trenirovki.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Users.cs">
-      <DependentUpon>Modelbase.tt</DependentUpon>
+      <DependentUpon>ModelComplex.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -149,12 +167,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Entity\Modelbase.edmx">
+    <EntityDeploy Include="Entity\ModelComplex.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Modelbase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelComplex.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entity\Modelbase.edmx.diagram">
-      <DependentUpon>Modelbase.edmx</DependentUpon>
+    <None Include="Entity\ModelComplex.edmx.diagram">
+      <DependentUpon>ModelComplex.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -165,26 +183,39 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Drawable\key-icon.png" />
     <Resource Include="Drawable\user.png" />
     <Resource Include="Drawable\logo.png" />
     <Resource Include="Drawable\email.png" />
     <Resource Include="Drawable\phone.png" />
-    <Content Include="Entity\Modelbase.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Modelbase.Context.cs</LastGenOutput>
-      <DependentUpon>Modelbase.edmx</DependentUpon>
-    </Content>
-    <Content Include="Entity\Modelbase.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Modelbase.edmx</DependentUpon>
-      <LastGenOutput>Modelbase.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\ModelComplex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelComplex.edmx</DependentUpon>
+      <LastGenOutput>ModelComplex.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\ModelComplex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelComplex.edmx</DependentUpon>
+      <LastGenOutput>ModelComplex.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -13,10 +13,10 @@ namespace SportComplexNaumov.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EntitiesSportComplex : DbContext
+    public partial class EntitiesComplex : DbContext
     {
-        public EntitiesSportComplex()
-            : base("name=EntitiesSportComplex")
+        public EntitiesComplex()
+            : base("name=EntitiesComplex")
         {
         }
     
@@ -25,11 +25,12 @@ namespace SportComplexNaumov.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Cekcia> Cekcia { get; set; }
-        public virtual DbSet<Instryctor> Instryctor { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Abonement> Abonement { get; set; }
+        public virtual DbSet<Cekcia> Cekcia { get; set; }
         public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Instryctor> Instryctor { get; set; }
+        public virtual DbSet<Section> Section { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Trenirovki> Trenirovki { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }

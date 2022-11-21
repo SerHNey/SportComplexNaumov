@@ -14,9 +14,18 @@ namespace SportComplexNaumov.Entity
     
     public partial class Instryctor
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Instryctor()
+        {
+            this.Abonement = new HashSet<Abonement>();
+        }
+    
         public int id { get; set; }
         public string name_instryctora { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Abonement> Abonement { get; set; }
     }
 }
