@@ -82,11 +82,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AllPages\client.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllPages\instryctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AllPages\login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AllPages\register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllPages\section.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,11 +111,20 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="AllClass\Manager.cs" />
+    <Compile Include="AllPages\client.xaml.cs">
+      <DependentUpon>client.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\instryctor.xaml.cs">
+      <DependentUpon>instryctor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AllPages\login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
     <Compile Include="AllPages\register.xaml.cs">
       <DependentUpon>register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllPages\section.xaml.cs">
+      <DependentUpon>section.xaml</DependentUpon>
     </Compile>
     <Compile Include="AllPages\trenirovki.xaml.cs">
       <DependentUpon>trenirovki.xaml</DependentUpon>
