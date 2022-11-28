@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SportComplexNaumov.Entity;
 
 namespace SportComplexNaumov.AllPages
 {
@@ -28,7 +29,40 @@ namespace SportComplexNaumov.AllPages
 
         private void btnMinsize_Click(object sender, RoutedEventArgs e)
         {
-            
+            string login = txtUser.Text.Trim();
+            string pass = txtPass.Password.Trim();
+
+
+            if (login.Length < 1)
+            {
+                txtUser.ToolTip = "Логин либо пароль введенны не правильно.";
+                txtUser.Background = Brushes.DarkRed;
+            }
+            else if (pass.Length < 1)
+            {
+                txtPass.ToolTip = "Логин либо пароль введенны не правильно.";
+                txtPass.Background = Brushes.DarkRed;
+            }
+            else
+            {
+                txtUser.ToolTip = ""; txtUser.Background = Brushes.Transparent;
+                txtPass.ToolTip = ""; txtPass.Background = Brushes.Transparent;
+
+                Users authUser = null;
+                using (EntitiesComplex context = new EntitiesComplex())
+                {
+                    authUser = context.Users.Where(b => b.login == login && b.password == pass).FirstOrDefault();
+                }
+
+                if (authUser != null)
+                {
+                    MessageBox.Show("Все данные введены верно");
+                    Manager.MainFrame.Navigate(new AllPages.section());
+                }
+                    
+                else
+                    MessageBox.Show("Вы ввели не правильные данные");
+            }
         }
         private void gotologin_Click(object sender, RoutedEventArgs e)
         {

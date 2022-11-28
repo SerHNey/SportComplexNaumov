@@ -107,6 +107,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
                             Margin="0,30,0,0"
+                        Click="btnMinsize_Click"
                             >
                         <Button.Style>
                             <Style TargetType="Button">

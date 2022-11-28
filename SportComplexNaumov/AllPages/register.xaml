@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <StackPanel Width="400"
+            <StackPanel Width="400" Name="registers"
                             Orientation="Vertical"
                             Margin="0,0,0,0">
                 <Image Source="/Drawable/Logo.png"
@@ -36,8 +36,8 @@
                                TextWrapping="Wrap"
                                TextAlignment="Center"
                                Margin="0,5,0,0"/>
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Orientation="Vertical" Width="200">
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Orientation="Vertical" Width="200" Name="sfio">
                         <TextBlock Text="Фио"
                                Foreground="DarkGray"
                                FontSize="12"
@@ -63,7 +63,7 @@
                             </TextBox.Background>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Width="200" Margin="20 0 0 0">
+                    <StackPanel Orientation="Vertical" Width="200" Margin="20 0 0 0" Name="sphone">
                         <TextBlock Text="Номер"
                                Foreground="DarkGray"
                                FontSize="12"
@@ -169,7 +169,7 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="0,20,0,0"
+                            Margin="0,20,0,0" Click="btnLogin_Click"
                             >
                     <Button.Style>
                         <Style TargetType="Button">
