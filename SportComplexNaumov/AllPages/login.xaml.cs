@@ -66,7 +66,7 @@ namespace SportComplexNaumov.AllPages
         }
         private void gotologin_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AllPages.section());
+            Manager.MainFrame.Navigate(new AllPages.register());
         }
     }
 }
