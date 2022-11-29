@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="SportComplexNaumovModel.Client" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="SportComplexNaumovModel.Instryctor" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SportComplexNaumovModel.Section" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SportComplexNaumovModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportComplexNaumovModel.sysdiagrams" Width="1.5" PointX="9.5" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SportComplexNaumovModel.Trenirovki" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SportComplexNaumovModel.Users" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SportComplexNaumovModel.FK_Abonement_Client" ManuallyRouted="false" />

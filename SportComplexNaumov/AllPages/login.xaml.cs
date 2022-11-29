@@ -57,7 +57,7 @@ namespace SportComplexNaumov.AllPages
                 if (authUser != null)
                 {
                     MessageBox.Show("Все данные введены верно");
-                    Manager.MainFrame.Navigate(new AllPages.section());
+                    Manager.MainFrame.Navigate(new AllPages.abonement());
                 }
                     
                 else
@@ -66,7 +66,7 @@ namespace SportComplexNaumov.AllPages
         }
         private void gotologin_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AllPages.register());
+            Manager.MainFrame.Navigate(new AllPages.section());
         }
     }
 }

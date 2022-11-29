@@ -20,13 +20,14 @@ namespace SportComplexNaumov.Entity
             : base("name=EntitiesComplex")
         {
         }
-    
+
         public static EntitiesComplex GetContext()
         {
-            if ( _context == null )
+            if (_context == null)
                 _context = new EntitiesComplex();
             return _context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

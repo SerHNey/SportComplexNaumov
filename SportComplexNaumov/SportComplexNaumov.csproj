@@ -82,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AllPages\abonement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AllPages\client.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +115,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="AllClass\Manager.cs" />
+    <Compile Include="AllPages\abonement.xaml.cs">
+      <DependentUpon>abonement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AllPages\client.xaml.cs">
       <DependentUpon>client.xaml</DependentUpon>
     </Compile>
