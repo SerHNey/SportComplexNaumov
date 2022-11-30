@@ -24,7 +24,7 @@ namespace SportComplexNaumov.AllPages
         public abonement()
         {
             InitializeComponent();
-            DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Section.ToList();
+            DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Abonement.ToList();
             ComboCountries.ItemsSource = EntitiesComplex.GetContext().Cekcia.ToList();
             ComboClentt.ItemsSource = EntitiesComplex.GetContext().Client.ToList();
             Comboinstryctorr.ItemsSource = EntitiesComplex.GetContext().Instryctor.ToList();

@@ -53,17 +53,18 @@
                     <DataGrid x:Name="DGridAbonement" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Номер абонемента" Binding="{Binding id}" Width="*"/>
-                            <DataGridTextColumn Header="Номер секции" Binding="{Binding id_section}" Width="*"/>
-                            <DataGridTextColumn Header="Номер клиента" Binding="{Binding id_client}" Width="*"/>
-                            <DataGridTextColumn Header="Номер инстуктора" Binding="{Binding id_instryrtor}" Width="*"/>
+                            <DataGridTextColumn Header="Номер секции" Binding="{Binding Cekcia.id}" Width="*"/>
+                            <DataGridTextColumn Header="Номер клиента" Binding="{Binding Client.name}" Width="*"/>
+                            <DataGridTextColumn Header="Номер инстуктора" Binding="{Binding Instryctor.name_instryctora}" Width="*"/>
                             <DataGridTextColumn Header="Время" Binding="{Binding date}" Width="*"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="*"/>
+                            <DataGridTextColumn Header="Скидка" Binding="{Binding discount}" Width="*"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button Content="Добавить"  Name="BtnAdd" />
                     <Button Content="Удалить" Name="BtnDelete" />
                 </StackPanel>
             </Grid>
-            
         </Grid>
     </Border>
 </Page>

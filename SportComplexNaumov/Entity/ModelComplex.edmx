@@ -4,23 +4,25 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище SportComplexNaumovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище SportComplexNaumovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Abonement">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_section" Type="int" />
           <Property Name="id_client" Type="int" />
           <Property Name="id_instryrtor" Type="int" />
           <Property Name="date" Type="datetime" />
+          <Property Name="price" Type="int" />
+          <Property Name="discount" Type="int" />
         </EntityType>
         <EntityType Name="Cekcia">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cekcia" Type="nvarchar" MaxLength="50" />
+          <Property Name="name_cekcia" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -166,8 +168,7 @@
             <End Role="Section" EntitySet="Section" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SportComplexNaumovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -183,14 +184,16 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_Abonement_Client" FromRole="Abonement" ToRole="Client" />
           <NavigationProperty Name="Instryctor" Relationship="Self.FK_Abonement_Instryctor" FromRole="Abonement" ToRole="Instryctor" />
           <NavigationProperty Name="Section" Relationship="Self.FK_Abonement_Section" FromRole="Abonement" ToRole="Section" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="discount" Type="Int32" />
         </EntityType>
         <EntityType Name="Cekcia">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cekcia1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Section" Relationship="Self.FK_Section_Cekcia" FromRole="Cekcia" ToRole="Section" />
+          <Property Name="name_cekcia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -351,6 +354,8 @@
           <EntitySetMapping Name="Abonement">
             <EntityTypeMapping TypeName="SportComplexNaumovModel.Abonement">
               <MappingFragment StoreEntitySet="Abonement">
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_section" ColumnName="id_section" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
@@ -362,8 +367,8 @@
           <EntitySetMapping Name="Cekcia">
             <EntityTypeMapping TypeName="SportComplexNaumovModel.Cekcia">
               <MappingFragment StoreEntitySet="Cekcia">
+                <ScalarProperty Name="name_cekcia" ColumnName="name_cekcia" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cekcia1" ColumnName="cekcia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

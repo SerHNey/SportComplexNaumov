@@ -21,7 +21,7 @@
                 <DataGrid x:Name="DGridSection" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Номер секции" Binding="{Binding id_section}" Width="*"/>
-                        <DataGridTextColumn Header="Номер секции" Binding="{Binding Cekcia.cekcia1}" Width="*"/>
+                        <DataGridTextColumn Header="Номер секции" Binding="{Binding Cekcia.cekcia}" Width="*"/>
                         <DataGridTextColumn Header="Номер тренировки" Binding="{Binding Trenirovki.name_trenirovki}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>

@@ -21,7 +21,7 @@ namespace SportComplexNaumov.Entity
         }
     
         public int id { get; set; }
-        public string cekcia1 { get; set; }
+        public string name_cekcia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Section> Section { get; set; }

@@ -19,6 +19,8 @@ namespace SportComplexNaumov.Entity
         public Nullable<int> id_client { get; set; }
         public Nullable<int> id_instryrtor { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public Nullable<int> price { get; set; }
+        public Nullable<int> discount { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Instryctor Instryctor { get; set; }
