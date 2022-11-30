@@ -26,10 +26,13 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
+                <StackPanel>
+                    <StackPanel Grid.Column="0">
                     <TextBlock Text="Название секции" Foreground="White"/>
-                    <ComboBox SelectedItem="{Binding Cekcia}" Grid.Column="1" Grid.Row="2" x:Name="ComboCountries" DisplayMemberPath="cekcia1"></ComboBox>
+                    <ComboBox SelectedItem="{Binding Cekcia}" Grid.Column="1" Grid.Row="2" x:Name="Combosection" DisplayMemberPath="cekcia1"></ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="Клиент" Foreground="White"/>
@@ -43,6 +46,17 @@
                     <TextBlock Text="Время" Foreground="White"/>
                     <ComboBox SelectedItem="{Binding time}" x:Name="Combotimee" DisplayMemberPath="timee"></ComboBox>
                 </StackPanel>
+                <StackPanel Grid.Column="4">
+                    <TextBlock Text="Цена" Foreground="White"/>
+                    <ComboBox SelectedItem="{Binding price}" x:Name="Comboprice" DisplayMemberPath="price"></ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Column="5">
+                    <TextBlock Text="Скидка" Foreground="White"/>
+                    <TextBox  x:Name="Combodiscount"></TextBox>
+                </StackPanel>
+                    <Button x:Name="button_add" Content="Добавить" Click="button_add_Click"></Button>
+                </StackPanel>
+                
 
             </Grid>
             <Grid Grid.Row="0">

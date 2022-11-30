@@ -46,9 +46,20 @@ namespace SportComplexNaumov.AllPages
                if(item.Text.Length < 4)
                {
                     item.BorderBrush = Brushes.DarkRed;
+
                }
                else
                     item.BorderBrush = Brushes.Gray;
+            }
+            using (EntitiesComplex context = new EntitiesComplex())
+            {
+                authUser.name = fio;
+                authUser.phone = phone;
+                authUser.email = email;
+                authUser.login = login;
+                authUser.password = pass;
+                EntitiesComplex.GetContext().Users.Add(authUser);
+                EntitiesComplex.GetContext().SaveChanges();
             }
 
             //if (fio.Length < 4)
@@ -122,17 +133,7 @@ namespace SportComplexNaumov.AllPages
             //    txtPass.ToolTip = "";
             //    txtPass.Background = Brushes.Transparent;
 
-            //    Users authUser = new Users();
-            //    using (EntitiesComplex context = new EntitiesComplex())
-            //    {
-            //        authUser.name = fio;
-            //        authUser.phone = phone;
-            //        authUser.email = email;
-            //        authUser.login = login;
-            //        authUser.password = pass;
-            //        EntitiesComplex.GetContext().Users.Add(authUser);
-            //        EntitiesComplex.GetContext().SaveChanges();
-            //    }
+
 
             //    if (authUser != null)
             //    {

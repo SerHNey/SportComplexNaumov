@@ -25,10 +25,28 @@ namespace SportComplexNaumov.AllPages
         {
             InitializeComponent();
             DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Abonement.ToList();
-            ComboCountries.ItemsSource = EntitiesComplex.GetContext().Cekcia.ToList();
+            Combosection.ItemsSource = EntitiesComplex.GetContext().Cekcia.ToList();
             ComboClentt.ItemsSource = EntitiesComplex.GetContext().Client.ToList();
             Comboinstryctorr.ItemsSource = EntitiesComplex.GetContext().Instryctor.ToList();
             
+        }
+
+        private void button_add_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+            Users authUser = new Users();
+            //using (EntitiesComplex context = new EntitiesComplex())
+            //{
+            //    authUser.name = fio;
+            //    authUser.phone = phone;
+            //    authUser.email = email;
+            //    authUser.login = login;
+            //    authUser.password = pass;
+            //    EntitiesComplex.GetContext().Users.Add(authUser);
+            //    EntitiesComplex.GetContext().SaveChanges();
+            //}
         }
     }
 }
