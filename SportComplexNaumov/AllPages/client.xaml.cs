@@ -26,5 +26,15 @@ namespace SportComplexNaumov.AllPages
             InitializeComponent();
             DGridClient.ItemsSource = EntitiesComplex.GetContext().Client.ToList();
         }
+
+        private void btnAbonement_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

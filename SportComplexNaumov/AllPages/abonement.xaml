@@ -71,7 +71,14 @@
                             <DataGridTextColumn Header="Время" Binding="{Binding date}" Width="*"/>
                             <DataGridTextColumn Header="Цена" Binding="{Binding price}" Width="*"/>
                             <DataGridTextColumn Header="Скидка" Binding="{Binding discount}" Width="*"/>
-                        </DataGrid.Columns>
+                        <DataGridTemplateColumn Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Редактировать" Name="BtnEdit" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
                     </DataGrid>
                 <StackPanel Grid.Row="1">
                     <Button Content="Добавить"  Name="BtnAdd" />
