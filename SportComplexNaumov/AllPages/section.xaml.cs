@@ -26,5 +26,28 @@ namespace SportComplexNaumov.AllPages
             InitializeComponent();
             DGridSection.ItemsSource = EntitiesComplex.GetContext().Section.ToList();
         }
+
+        private void btnAbonement_Click(object sender, RoutedEventArgs e)
+        {
+            Entity.Section section = new Entity.Section();
+            if (sec_sec.Text == null)
+                MessageBox.Show("Введите имя");
+
+            if (sec_tren.Text == null)
+                MessageBox.Show("Введите телефон");
+
+            try
+            {
+                section.Cekcia = sec_sec.Text;
+                section.Trenirovki = sec_tren.Text;
+                EntitiesComplex.GetContext().Section.Add(clinet);
+                EntitiesComplex.GetContext().SaveChanges();
+                MessageBox.Show("Запись добавленна");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }
