@@ -34,22 +34,23 @@ namespace SportComplexNaumov.AllPages
 
         private void button_add_Click(object sender, RoutedEventArgs e)
         {
-            //StringBuilder errors = new StringBuilder();
-            //if (_currentabonement.id_section == null)
-            //    errors.AppendLine("Укажите название секции");
-            //if (_currentabonement.id_client == null)
-            //    errors.AppendLine("Укажите клиента");
-            //if (_currentabonement.Instryctor == null)
-            //    errors.AppendLine("Выберете инструктора");
-            //if (_currentabonement.date == null)
-            //    errors.AppendLine("Выберете время");
-            //if (_currentabonement.price == null)
-            //    errors.AppendLine("Укажите цену");
-            //if (_currentabonement.discount == null)
-            //    errors.AppendLine("Укажите цену");
+            StringBuilder errors = new StringBuilder();
+            if (_currentabonement.id_section == null)
+                errors.AppendLine("Укажите название секции");
+            if (_currentabonement.id_client == null)
+                errors.AppendLine("Укажите клиента");
+            if (_currentabonement.Instryctor == null)
+                errors.AppendLine("Выберете инструктора");
+            if (_currentabonement.date == null)
+                errors.AppendLine("Выберете время");
+            if (_currentabonement.price == null)
+                errors.AppendLine("Укажите цену");
+            if (_currentabonement.discount == null)
+                errors.AppendLine("Укажите цену");
 
             try
             {
+                EntitiesComplex.GetContext().Abonement.Add(_currentabonement);
                 EntitiesComplex.GetContext().SaveChanges();
                 MessageBox.Show("Запись добавленна");
             }
