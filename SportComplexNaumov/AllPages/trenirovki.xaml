@@ -40,7 +40,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Margin="10" Grid.Column="1">
                     <TextBlock Text="Тренировка" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="trenirov"></TextBox>
                     <Button x:Name="btnAbonement"    
                             BorderThickness="0"
                             Content="Добавить"

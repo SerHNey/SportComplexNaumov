@@ -44,11 +44,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Margin="10" Grid.Column="0">
                     <TextBlock Text="Имя" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="instr_name"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Column="1">
                     <TextBlock Text="Телефон" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="instr_phone"></TextBox>
                     <Button x:Name="btnAbonement"    
                             BorderThickness="0"
                             Content="Добавить"
@@ -56,7 +56,7 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="0 10">
+                            Margin="0 10" Click="btnAbonement_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#462AD8"/>
@@ -81,7 +81,7 @@
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Column="2">
                     <TextBlock Text="Почта" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="instr_email"></TextBox>
                 </StackPanel>
             </Grid>
         </Grid>
