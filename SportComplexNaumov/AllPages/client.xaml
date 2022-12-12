@@ -43,11 +43,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Margin="10" Grid.Column="0">
                        <TextBlock Text="Имя" Foreground="White"/>
-                        <TextBox Text="{Binding price}"></TextBox>
+                        <TextBox x:Name="client_name"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Column="1">
                     <TextBlock Text="Телефон" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="client_phone"></TextBox>
                     <Button x:Name="btnAbonement"    
                             BorderThickness="0"
                             Content="Добавить"
@@ -81,7 +81,7 @@
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Column="2">
                     <TextBlock Text="Почта" Foreground="White"/>
-                    <TextBox Text="{Binding price}"></TextBox>
+                    <TextBox x:Name="client_email"></TextBox>
 
                 </StackPanel>
 

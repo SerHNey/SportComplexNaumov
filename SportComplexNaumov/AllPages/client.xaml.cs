@@ -29,7 +29,28 @@ namespace SportComplexNaumov.AllPages
 
         private void btnAbonement_Click(object sender, RoutedEventArgs e)
         {
+            Client clinet = new Client();
+            if (client_name.Text == null)
+                MessageBox.Show("Введите имя");
+            
+            if (client_phone.Text == null)
+                MessageBox.Show("Введите телефон");
+            if (client_email.Text == null)
+                MessageBox.Show("Введите почта");
 
+            try
+            {
+                clinet.name = client_name.Text;
+                clinet.phone = client_phone.Text;
+                clinet.email = client_email.Text;
+                EntitiesComplex.GetContext().Client.Add(clinet);
+                EntitiesComplex.GetContext().SaveChanges();
+                MessageBox.Show("Запись добавленна");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
