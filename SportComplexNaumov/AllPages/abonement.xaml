@@ -48,11 +48,11 @@
                 </StackPanel>
                 <StackPanel Grid.Column="4">
                     <TextBlock Text="Цена" Foreground="White"/>
-                    <TextBox Text="{Binding price}" x:Name="Comboprice"></TextBox>
+                    <TextBox Text="{Binding price}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Column="5">
                     <TextBlock Text="Скидка" Foreground="White"/>
-                    <TextBox Text="{Binding discount}"  x:Name="discount"></TextBox>
+                    <TextBox Text="{Binding discount}"></TextBox>
                 </StackPanel>
                     <Button x:Name="button_add" Content="Добавить" Click="button_add_Click"></Button>
                 </StackPanel>
