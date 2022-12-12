@@ -32,7 +32,7 @@
                 <StackPanel>
                     <StackPanel Grid.Column="0">
                     <TextBlock Text="Название секции" Foreground="White"/>
-                        <ComboBox SelectedItem="{Binding Section.id_cekcia}" Grid.Column="1" Grid.Row="2" x:Name="Combosection" DisplayMemberPath="cekcia1"></ComboBox>
+                        <ComboBox SelectedItem="{Binding Section.id_cekcia}" Grid.Column="1" Grid.Row="2" x:Name="Combosection" DisplayMemberPath="id_section"></ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="Клиент" Foreground="White"/>
