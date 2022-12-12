@@ -23,7 +23,7 @@ namespace SportComplexNaumov
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new AllPages.login());
+            MainFrame.Navigate(new AllPages.trenirovki());
             AllClass.Manager.MainFrame = MainFrame;
         }
 
