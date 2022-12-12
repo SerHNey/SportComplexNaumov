@@ -26,6 +26,7 @@ namespace SportComplexNaumov.Entity
             : base("name=EntitiesComplex")
         {
         }
+
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

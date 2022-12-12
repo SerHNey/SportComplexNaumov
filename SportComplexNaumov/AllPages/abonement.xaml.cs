@@ -21,11 +21,12 @@ namespace SportComplexNaumov.AllPages
     /// </summary>
     public partial class abonement : Page
     {
+        private Abonement _currentabonement = new Abonement();
         public abonement()
         {
             InitializeComponent();
             DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Abonement.ToList();
-            Combosection.ItemsSource = EntitiesComplex.GetContext().Cekcia.ToList();
+            Combosection.ItemsSource = EntitiesComplex.GetContext().Section.ToList();
             ComboClentt.ItemsSource = EntitiesComplex.GetContext().Client.ToList();
             Comboinstryctorr.ItemsSource = EntitiesComplex.GetContext().Instryctor.ToList();
             
@@ -33,13 +34,41 @@ namespace SportComplexNaumov.AllPages
 
         private void button_add_Click(object sender, RoutedEventArgs e)
         {
+            //StringBuilder errors = new StringBuilder();
+            //if (_currentabonement.id_section == null)
+            //    errors.AppendLine("Укажите название секции");
+            //if (_currentabonement.id_client == null)
+            //    errors.AppendLine("Укажите клиента");
+            //if (_currentabonement.Instryctor == null)
+            //    errors.AppendLine("Выберете инструктора");
+            //if (_currentabonement.date == null)
+            //    errors.AppendLine("Выберете время");
+            //if (_currentabonement.price == null)
+            //    errors.AppendLine("Укажите цену");
+            //if (_currentabonement.discount == null)
+            //    errors.AppendLine("Укажите цену");
+
+            try
+            {
+                EntitiesComplex.GetContext().SaveChanges();
+                MessageBox.Show("Запись добавленна");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
 
 
 
-            Users authUser = new Users();
+            //string abonent = txt.Text.Trim();hone.Text.Trim();
+            //string email = txtemail.Text.Trim();
+            //string login = txtlogin.Text.Trim();
+            //string pass = txtPass.Password.Trim();
+
+            //Users authUser = new Users();
             //using (EntitiesComplex context = new EntitiesComplex())
             //{
-            //    authUser.name = fio;
+            //    authUser.abonent = fio;
             //    authUser.phone = phone;
             //    authUser.email = email;
             //    authUser.login = login;

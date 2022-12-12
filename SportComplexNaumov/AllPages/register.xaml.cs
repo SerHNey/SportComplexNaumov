@@ -135,15 +135,15 @@ namespace SportComplexNaumov.AllPages
 
 
 
-            //    if (authUser != null)
-            //    {
-            //        MessageBox.Show("Все данные введены верно");
-            //        Manager.MainFrame.Navigate(new AllPages.section());
-            //    }
-
-            //    else
-            //        MessageBox.Show("Вы ввели не правильные данные");
+            //if (authUser != null)
+            //{
+            //    MessageBox.Show("Все данные введены верно");
+            //    Manager.MainFrame.Navigate(new AllPages.section());
             //}
+
+            //else
+            //    MessageBox.Show("Вы ввели не правильные данные");
         }
     }
+    
 }

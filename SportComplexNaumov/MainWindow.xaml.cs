@@ -42,5 +42,10 @@ namespace SportComplexNaumov
         {
             Application.Current.Shutdown(); 
         }
+
+        private void btnback_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AllPages.menu());
+        }
     }
 }
