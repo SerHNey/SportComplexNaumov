@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportComplexNaumov.Entity;
+using Section = SportComplexNaumov.Entity.Section;
 
 namespace SportComplexNaumov.AllPages
 {
@@ -45,6 +46,25 @@ namespace SportComplexNaumov.AllPages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void btndel_Click(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = DGridSection.SelectedItems.Cast<Section>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {hotelsForRemoving.Count()} элементов?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    EntitiesComplex.GetContext().Section.RemoveRange(hotelsForRemoving);
+                    EntitiesComplex.GetContext().SaveChanges();
+                    MessageBox.Show("Даныые удалены");
+                    DGridSection.ItemsSource = EntitiesComplex.GetContext().Section.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
         }
     }
