@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SportComplexNaumov.AllClass;
 using SportComplexNaumov.Entity;
 
 namespace SportComplexNaumov.AllPages
@@ -55,6 +56,8 @@ namespace SportComplexNaumov.AllPages
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            
+
 
         }
 
