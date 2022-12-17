@@ -38,9 +38,7 @@ namespace SportComplexNaumov.AllPages
 
             try
             {
-                section.Cekcia = sec_sec.Text;
-                section.Trenirovki = sec_tren.Text;
-                EntitiesComplex.GetContext().Section.Add(clinet);
+              
                 EntitiesComplex.GetContext().SaveChanges();
                 MessageBox.Show("Запись добавленна");
             }

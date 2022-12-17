@@ -57,5 +57,24 @@ namespace SportComplexNaumov.AllPages
         {
 
         }
+
+        private void btndel_Click(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = DGridClient.SelectedItems.Cast<Client>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {hotelsForRemoving.Count()} элементов?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    EntitiesComplex.GetContext().Client.RemoveRange(hotelsForRemoving);
+                    EntitiesComplex.GetContext().SaveChanges();
+                    MessageBox.Show("Даныые удалены");
+                    DGridClient.ItemsSource = EntitiesComplex.GetContext().Client.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace SportComplexNaumov.AllPages
             InitializeComponent();
             DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Abonement.ToList();
 
-            
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
@@ -75,6 +74,25 @@ namespace SportComplexNaumov.AllPages
             //    EntitiesComplex.GetContext().Users.Add(authUser);
             //    EntitiesComplex.GetContext().SaveChanges();
             //}
+        }
+
+        private void btndel_Click(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = DGridAbonement.SelectedItems.Cast<Abonement>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {hotelsForRemoving.Count()} элементов?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    EntitiesComplex.GetContext().Abonement.RemoveRange(hotelsForRemoving);
+                    EntitiesComplex.GetContext().SaveChanges();
+                    MessageBox.Show("Даныые удалены");
+                    DGridAbonement.ItemsSource = EntitiesComplex.GetContext().Abonement.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
     }
 }

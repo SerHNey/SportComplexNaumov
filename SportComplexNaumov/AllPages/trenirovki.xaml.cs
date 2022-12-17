@@ -28,29 +28,72 @@ namespace SportComplexNaumov.AllPages
         {
             InitializeComponent();
             list = EntitiesComplex.GetContext().Trenirovki.ToList();
-            DGridTrenirovki.ItemsSource = list;
-            Console.Write(list.Count);
-            Thread myThread1 = new Thread(Print);
-            myThread1.Start();
+            DGridTrenirovki.ItemsSource = EntitiesComplex.GetContext().Trenirovki.ToList();
+
+            //DGridTrenirovki.ItemsSource = list;
+            //Console.Write(list.Count);
+            //Thread myThread1 = new Thread(Print);
+            //myThread1.Start();
 
 
         }
 
-        void Print()
+        //void Print()
+        //{
+        //    int count = list.Count;
+        //    while (true)
+        //    {
+        //        if (list.Count > count && list.Last().name_trenirovki != null)
+        //        {
+        //            EntitiesComplex.GetContext().Trenirovki.Add(list.Last());
+        //            EntitiesComplex.GetContext().SaveChanges();
+        //            count++;
+        //        }
+        //    }
+        //}
+
+
+        private void btnAbonement_Click(object sender, RoutedEventArgs e)
         {
-            int count = list.Count;
-            while (true)
+            Trenirovki trenirovki = new Trenirovki();
+            if (trenirov == null)
             {
-                if (list.Count > count && list.Last().name_trenirovki != null)
+                MessageBox.Show("Введите название");
+            }
+            try
+            {
+                trenirovki.name_trenirovki = trenirov.Text;
+
+                EntitiesComplex.GetContext().Trenirovki.Add(trenirovki);
+                EntitiesComplex.GetContext().SaveChanges();
+                MessageBox.Show("Запись добавленна");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void btndel_Click(object sender, RoutedEventArgs e)
+        {
+            var hotelsForRemoving = DGridTrenirovki.SelectedItems.Cast<Trenirovki>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {hotelsForRemoving.Count()} элементов?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
                 {
-                    EntitiesComplex.GetContext().Trenirovki.Add(list.Last());
+                    EntitiesComplex.GetContext().Trenirovki.RemoveRange(hotelsForRemoving);
                     EntitiesComplex.GetContext().SaveChanges();
-                    count++;
+                    MessageBox.Show("Даныые удалены");
+                    DGridTrenirovki.ItemsSource = EntitiesComplex.GetContext().Trenirovki.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
                 }
             }
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnEit_Click(object sender, RoutedEventArgs e)
         {
 
         }
