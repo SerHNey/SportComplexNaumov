@@ -22,6 +22,7 @@ namespace SportComplexNaumov.AllPages
     /// </summary>
     public partial class client : Page
     {
+        public client currentHotel = new client();
         public client()
         {
             InitializeComponent();
@@ -57,7 +58,8 @@ namespace SportComplexNaumov.AllPages
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             
-
+            currentHotel=((sender as Button).DataContext as client);
+            
 
         }
 
