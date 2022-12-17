@@ -22,6 +22,7 @@ namespace SportComplexNaumov.AllPages
     /// </summary>
     public partial class client : Page
     {
+        Client clientt = new Client();
         public client()
         {
             InitializeComponent();
@@ -38,30 +39,48 @@ namespace SportComplexNaumov.AllPages
                 MessageBox.Show("Введите телефон");
             if (client_email.Text == null)
                 MessageBox.Show("Введите почта");
-
-            try
+            if (clientt != null)
             {
-                clinet.name = client_name.Text;
-                clinet.phone = client_phone.Text;
-                clinet.email = client_email.Text;
-                EntitiesComplex.GetContext().Client.Add(clinet);
-                EntitiesComplex.GetContext().SaveChanges();
-                MessageBox.Show("Запись добавленна");
+                try
+                {
+                    
+                    clientt.name = client_name.Text;
+                    clientt.phone = client_email.Text;
+                    clientt.email = client_phone.Text;
+                    EntitiesComplex.GetContext().SaveChanges();
+                    MessageBox.Show("Запись добавленна");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                try
+                {
+                    clinet.name = client_name.Text;
+                    clinet.phone = client_email.Text;
+                    clinet.email = client_phone.Text;
+                    EntitiesComplex.GetContext().Client.Add(clinet);
+                    EntitiesComplex.GetContext().SaveChanges();
+                    MessageBox.Show("Запись добавленна");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
+            
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
 
-            client = ((sender as Button).DataContext as Client);
-            client_name.Text = client.name;
-            client_email.Text = client.email;
-            client_phone.Text = client.phone;
+            clientt = ((sender as Button).DataContext as Client);
+            client_name.Text = clientt.name;
+            client_email.Text = clientt.email;
+            client_phone.Text = clientt.phone;
 
            
         }
