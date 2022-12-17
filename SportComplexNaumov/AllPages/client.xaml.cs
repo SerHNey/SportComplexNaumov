@@ -22,7 +22,6 @@ namespace SportComplexNaumov.AllPages
     /// </summary>
     public partial class client : Page
     {
-        public client currentHotel = new client();
         public client()
         {
             InitializeComponent();
@@ -57,10 +56,14 @@ namespace SportComplexNaumov.AllPages
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            
-            currentHotel=((sender as Button).DataContext as client);
-            
+            Client client = new Client();
 
+            client = ((sender as Button).DataContext as Client);
+            client_name.Text = client.name;
+            client_email.Text = client.email;
+            client_phone.Text = client.phone;
+
+           
         }
 
         private void btndel_Click(object sender, RoutedEventArgs e)
